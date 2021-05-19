@@ -29,6 +29,8 @@ import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
 
+import android.text.TextUtils;
+
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
@@ -106,6 +108,12 @@ public class Miscellaneous extends SettingsPreferenceFragment
         mTileAnimationInterpolator.setOnPreferenceChangeListener(this);
 
 	Preference mCutoutPref = (Preference) findPreference(PREF_KEY_CUTOUT);
+
+    String hasDisplayCutout = getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
+
+        if (TextUtils.isEmpty(hasDisplayCutout)) {
+            getPreferenceScreen().removePreference(mCutoutPref);
+        }
     }
 
     @Override
