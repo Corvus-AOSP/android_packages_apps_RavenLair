@@ -475,6 +475,7 @@
     <string name="fod_icon_animation_miui_aod">Xiaomi MIUI</string>
     <string name="fod_icon_animation_zaid_oneui">Samsung OneUI 3</string>
     <string name="fod_icon_animation_oneui2">Samsung OneUI 2</string>
+    <string name="config_fodIconAnimationPackage" translatable="false">com.android.systemui</string>
 
     <!-- FOD Animations -->
     <string name="fod_recog_animation">Fingerprint animation</string>
@@ -838,8 +839,17 @@
     <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
     <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
     <string name="display_cutout_force_fullscreen_restart_app">Please restart the application to apply the changes.</string>
+<<<<<<< HEAD
     <string name="cutout_force_fullscreen_no_apps">No apps</string>  
     
+=======
+    <string name="cutout_force_fullscreen_no_apps">No apps</string> 
+
+    <!-- Custom statusbar paddings -->
+    <string name="statusbar_custom_title">Statusbar</string>
+    <string name="custom_statusbar_padding_start">Padding (Start)</string>
+    <string name="custom_statusbar_padding_end">Padding (End)</string>
+>>>>>>> b552ed2... Lair: Add Fod Icon Anim Previews
     <!-- Gaming mode -->
     <string name="gaming_title">Gaming mode</string>
     <string name="gaming_title_summary">Extra features for immersive gaming experience</string>
