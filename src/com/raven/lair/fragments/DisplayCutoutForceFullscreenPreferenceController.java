@@ -36,7 +36,14 @@ public class DisplayCutoutForceFullscreenPreferenceController extends BasePrefer
 
     @Override
     public int getAvailabilityStatus() {
-        return mCutoutForceFullscreenSettings.isSupported() ?
+        return mCutoutForceFullscreenSettings.isSupported() && isCutoutShowing()?
                 AVAILABLE : UNSUPPORTED_ON_DEVICE;
     }
+
+    private boolean isCutoutShowing(){
+        return Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.DISPLAY_CUTOUT_HIDDEN, 0,
+                UserHandle.USER_CURRENT) == 0;
+    }
+
 }
