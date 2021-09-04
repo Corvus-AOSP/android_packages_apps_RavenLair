@@ -37,6 +37,8 @@ import android.widget.SectionIndexer;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.custom.cutout.CutoutFullscreenController;
@@ -50,6 +52,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class DisplayCutoutForceFullscreenSettings extends SettingsPreferenceFragment
         implements ApplicationsState.Callbacks {
 
@@ -369,4 +372,7 @@ public class DisplayCutoutForceFullscreenSettings extends SettingsPreferenceFrag
     public int getMetricsCategory() {
         return MetricsEvent.CORVUS;
     }
+
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider(R.xml.cutout);
 }
